@@ -1,2 +1,2 @@
-Prime Readme Foo
+Prime
 =====
