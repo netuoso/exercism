@@ -1,0 +1,44 @@
+Run options: --seed 63666
+
+# Running:
+
+.F..FFFFF
+
+Finished in 0.001781s, 5053.3124 runs/s, 5053.3124 assertions/s.
+
+  1) Failure:
+HammingTest#test_nonunique_characters_within_second_strand [hamming_test.rb:38]:
+Expected: 1
+  Actual: 2
+
+
+  2) Failure:
+HammingTest#test_nonunique_characters_within_first_strand [hamming_test.rb:34]:
+Expected: 1
+  Actual: 3
+
+
+  3) Failure:
+HammingTest#test_small_hamming_distance [hamming_test.rb:26]:
+Expected: 1
+  Actual: 4
+
+
+  4) Failure:
+HammingTest#test_hamming_distance_in_very_long_strand [hamming_test.rb:46]:
+Expected: 9
+  Actual: 13
+
+
+  5) Failure:
+HammingTest#test_complete_hamming_distance_of_for_small_strand [hamming_test.rb:22]:
+Expected: 2
+  Actual: 15
+
+
+  6) Failure:
+HammingTest#test_large_hamming_distance [hamming_test.rb:42]:
+Expected: 4
+  Actual: 19
+
+9 runs, 9 assertions, 6 failures, 0 errors, 0 skips
