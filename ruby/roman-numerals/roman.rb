@@ -54,11 +54,3 @@ end
 class Integer
   include RomanNumeral
 end
-
-class Array
-  def gsub(pattern, replacement)
-    each { |x|
-      x.gsub!(pattern, replacement)
-      }
-  end
-end
