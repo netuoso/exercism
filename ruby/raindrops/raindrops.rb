@@ -15,17 +15,14 @@ class Raindrops
 
   def self.convert(num)
 
-    rain_dict = { 3 => 'Pling', 5 => 'Plang', 7 => 'Plong' }
+    result = ''
 
-    rainspeak = ''
-    num.prime_division.each.map{ |x| rainspeak += rain_dict[x[0]] if [3,5,7].include?(x[0]) }
+    num % 3 == 0 ? result << 'Pling' : 0
+    num % 5 == 0 ? result << 'Plang' : 0
+    num % 7 == 0 ? result << 'Plong' : 0
 
-    return num.to_s unless rainspeak.length >= 1
-
-    rainspeak
+    result.empty? ? num.to_s : result 
 
   end
-
-
 
 end
