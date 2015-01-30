@@ -7,8 +7,6 @@ class Hamming
 
   def self.compute(str_1, str_2)
 
-    count = 0
-
     if str_1.length == str_2.length
 
       if str_1 == str_2
@@ -18,13 +16,7 @@ class Hamming
         arr_1 = str_1.split('')
         arr_2 = str_2.split('')
 
-        arr_1.count.times do
-          if arr_1.pop != arr_2.pop
-            count += 1
-          end
-        end
-
-        count
+        arr_1.length.times { |x| arr_1.pop != arr_2.pop }
 
       end
 

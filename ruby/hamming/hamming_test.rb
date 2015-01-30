@@ -2,7 +2,7 @@
 
 require 'minitest/autorun'
 begin
-  require_relative 'hamming'
+  require_relative 'hamming_2'
 rescue LoadError => e
   puts "\n\n#{e.backtrace.first} #{e.message}"
   puts DATA.read
