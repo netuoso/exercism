@@ -10,17 +10,15 @@ class Complement
                  'T' => 'A',
                  'A' => 'U' }
 
-    @rna_seq = @dna_seq.invert
-
   def self.of_dna(seq)
 
-    seq.chars.map { |x| @dna_seq[x] }.join
+    seq.gsub(/[CGTA]/, @dna_seq)
 
   end
 
   def self.of_rna(seq)
 
-    seq.chars.map { |x| @rna_seq[x] }.join
+    seq.gsub(/[GCAU]/, @dna_seq.invert)
 
   end
 
