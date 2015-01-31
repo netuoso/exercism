@@ -9,43 +9,26 @@
 
 module RomanNumeral
 
-  def to_roman
+  def to_roman (roman = '')
 
-    romans = { 'I' => 1,
-               'V' => 5,
-               'X' => 10,
-               'L' => 50,
-               'C' => 100,
-               'D' => 500,
-               'M' => 1000 }
+  int = self
 
-    romans_reduce = { 
-                      'IIII' => 'IV', 
-                      'XXXX' => 'XL',
-                      'CCCC' => 'CD',
-                      'VIIII' => 'IX',
-                      'XIIII' => 'IL',
-                      'LIIII' => 'IC',
-                      'CIIII' => 'ID',
-                      'DIIII' => 'IM',
-                      'DCCCC' => 'CM',
-                      'LXL' => 'XC',
-                      'VIV' => 'IX',
-                      'DCD' => 'CM' }
+  roman_dict = { 'M'  => 1000,
+                 'CM' => 900,
+                 'D'  => 500,
+                 'CD' => 400,
+                 'C'  => 100,
+                 'XC' => 90,
+                 'L'  => 50,
+                 'XL' => 40,
+                 'X'  => 10,
+                 'IX' => 9,
+                 'V'  => 5,
+                 'IV' => 4,
+                 'I'  => 1 }
 
-
-    converted = ''
-    (self / 1000).times { |x| converted << romans.invert[1000] }
-    (self % 1000 / 500).times { |x| converted << romans.invert[500] }
-    (self % 1000 % 500 / 100).times { |x| converted << romans.invert[100] }
-    (self % 1000 % 500 % 100 / 50).times { |x| converted << romans.invert[50] }
-    (self % 1000 % 500 % 100 % 50 / 10).times { |x| converted << romans.invert[10] }
-    (self % 1000 % 500 % 100 % 50 % 10 / 5).times { |x| converted << romans.invert[5] }
-    (self % 1000 % 500 % 100 % 50 % 10 % 5 / 1).times { |x| converted << romans.invert[1] }
-
-    romans_reduce.keys.each { |x| converted.gsub!(x, romans_reduce) }
-
-    converted
+      roman_dict.map { |letter, value| roman << letter * (int/value); int = int % value }
+      roman
 
   end
 
