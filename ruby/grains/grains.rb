@@ -6,17 +6,12 @@
 
 class Grains
 
-    @@squares = []
-
   def square(num)
-    @@squares = num.times.collect { |x| 2**x }
-    @@squares.last
+    2 ** (num - 1)
   end
 
   def total
-    total = 0
-    @@squares.each { |x| total += x }
-    total
+    (1..64).reduce { |sum, grains| sum + square(grains) }
   end
 
 end
