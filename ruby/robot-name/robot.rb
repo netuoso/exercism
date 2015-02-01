@@ -22,9 +22,9 @@ class Robot
     r = Random.new
 
     2.times { |x| letters << r.rand(65..90).chr }
-    2.times { |x| numbers << r.rand(65..90).to_s }
+    3.times { |x| numbers << r.rand(1..9).to_s }
 
-    @name = (letters + numbers)[0..4]
+    @name = (letters + numbers)
 
   end
 
