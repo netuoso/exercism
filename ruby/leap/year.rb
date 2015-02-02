@@ -7,7 +7,7 @@ class Year
 
   def self.leap?(year)
 
-    year % 4 != 0 ? false : true unless year % 100 == 0 and not year % 400 == 0
+    year % 4 != 0 ? false : true unless year % 100 == 0 && not year % 400 == 0
 
   end
 
