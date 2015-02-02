@@ -56,7 +56,3 @@ class FoodChainSong
   end
 
 end
-
-z = ::FoodChainSong.new
-
-p z.verses(1,3)
