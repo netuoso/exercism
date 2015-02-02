@@ -52,7 +52,11 @@ class FoodChainSong
   def verses(from_verse, to_verse)
     song = ''
     (from_verse..to_verse).each { |x| song << verse(x) + "\n" }
-    song.chomp.chomp
+    song
   end
 
 end
+
+z = ::FoodChainSong.new
+
+p z.verses(1,3)
