@@ -15,24 +15,25 @@
 # 3 Find the first number greater than p in the list that is not marked. If there was no such number, stop. Otherwise, let p now equal this new number (which is the next prime), and repeat from step 3.
 
 
-
 class Sieve
 
 def initialize(num)
-  @range = (2..num)
-  @marked = []
+
+  @range = Hash.new
+  (2..num).each { |x| @range[x] = true }
+
 end
 
 def primes
-  @range.each { |x| @marked << x*2 if x*2 <= @range.last }
-  @marked
+  @range.keys.map! { |x| @range[x*2] = false }
+
+  @range.keys.select { |x| @range[x] == true }
 end
 
 
 
-
 end
 
-z = Sieve.new(11)
+z = Sieve.new(100)
 
 p z.primes
