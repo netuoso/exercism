@@ -15,13 +15,13 @@ class Raindrops
 
   def self.convert(num)
 
-    result = ''
+      result = ''
 
-    num % 3 == 0 ? result << 'Pling' : 0
-    num % 5 == 0 ? result << 'Plang' : 0
-    num % 7 == 0 ? result << 'Plong' : 0
+      num % 3 == 0 ? result << 'Pling' : 0
+      num % 5 == 0 ? result << 'Plang' : 0
+      num % 7 == 0 ? result << 'Plong' : 0
 
-    result.empty? ? num.to_s : result 
+      result.empty? ? num.to_s : result 
 
   end
 
