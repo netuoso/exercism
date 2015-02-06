@@ -3,9 +3,6 @@
 # Exercism 15
 # Binary string to decimal number conversion
 
-# 10111 => 1*2^4 + 0*2^3 + 1*2^2 + 1*2^1 + 1*2^0
-# 10111 => 1*2^0 + 1*2^1 + 1*2^2 + 0*2^3 + 1*2^4
-
 class Binary
 
   def initialize(string)
@@ -14,9 +11,8 @@ class Binary
   end
 
   def to_decimal
+    (0..@binary.length).each { |x| @dec_num += @binary.reverse[x].to_i*(2**x) }
+    @binary.to_i == 0 ? 0 : @dec_num
   end
 
 end
-
-z = Binary.new("lw")
-p z.to_decimal
