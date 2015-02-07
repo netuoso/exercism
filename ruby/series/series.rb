@@ -7,15 +7,15 @@
 # the possible consecutive number series of length `n` in that string.
 
 class Series
-
   def initialize(string)
     @digits = string
   end
 
   def slices(num)
+    raise ArgumentError if num > @digits.length
+
     slices = []
-    @digits.chars.each { |x| slices << [x.to_i] }
+    (@digits.length - num + 1).times { |x| slices << @digits.slice(0+x, num).split('').map{ |x| x.to_i } }
     slices
   end
-
 end
