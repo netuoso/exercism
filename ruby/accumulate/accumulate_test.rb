@@ -7,7 +7,6 @@ class ArrayTest < MiniTest::Unit::TestCase
   end
 
   def test_accumulate_squares
-    skip
     result = [1, 2, 3].accumulate do |number|
       number * number
     end
@@ -15,7 +14,6 @@ class ArrayTest < MiniTest::Unit::TestCase
   end
 
   def test_accumulate_upcases
-    skip
     result = %w(hello world).accumulate(&:upcase)
     assert_equal %w(HELLO WORLD), result
   end
