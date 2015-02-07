@@ -7,7 +7,9 @@
 module Accumulate
 
   def accumulate
-    self
+    result = Array.new
+    self.each { |x| result << yield(x) }
+    result
   end
 
 end
