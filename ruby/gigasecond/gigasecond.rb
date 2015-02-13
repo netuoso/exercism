@@ -6,10 +6,9 @@
 
 class Gigasecond
 
-  def self.from(date_obj)
+  def self.from(time_obj)
 
-    from_epoch_secs = date_obj.to_time.utc.to_i
-    gigabirth = Date.parse(Time.at(from_epoch_secs + (10**9)).to_s)
+    time_obj + (10**9) # 1 Billion Seconds
 
   end
 
