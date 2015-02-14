@@ -30,3 +30,5 @@ class BeerSong
   def verses(from_verse, to_verse)
 
   end
+
+end
