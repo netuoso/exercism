@@ -28,7 +28,7 @@ class Crypto
   end
 
   def normalize_ciphertext
-    chunk(ciphertext, size).join(' ')
+    chunk(ciphertext, plaintext_segments.size).join(' ')
   end
 
   def chunk(string, size)
