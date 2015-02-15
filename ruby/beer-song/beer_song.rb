@@ -3,32 +3,27 @@
 # Exercism 25
 # 99 Bottles of Beer
 
-# Lyrics:
-# 99 bottles of beer on the wall, 99 bottles of beer.
-# Take one down and pass it around, 98 bottles of beer on the wall.
-# ...
-# ...
-# 1 bottle of beer on the wall, 1 bottle of beer.
-# Take it down and pass it around, no more bottles of beer on the wall.
-# No more bottles of beer on the wall, no more bottles of beer.
-# Go to the store and buy some more, 99 bottles of beer on the wall.
-
 class BeerSong
 
-  def sing
-
-  end
-
   def verse(num)
-
-  end
-
-  def verse_end
-
+    @beers = num
+    if @beers == 0
+      "No more bottles of beer on the wall, no more bottles of beer.\n"\
+      "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
+    else
+      "#{@beers} #{@beers == 1 ? 'bottle' : 'bottles'} of beer on the wall, #{@beers} #{@beers == 1 ? 'bottle' : 'bottles'} of beer.\n"\
+      "Take #{@beers == 1 ? 'it' : 'one'} down and pass it around, #{@beers-1 == 0 ? 'no more' : @beers-1} #{@beers-1 == 1 ? 'bottle' : 'bottles'} of beer on the wall.\n"
+    end
   end
 
   def verses(from_verse, to_verse)
+    song = ''
+    from_verse.downto(to_verse).each { |x| song << verse(x) + "\n"}
+    song
+  end
 
+  def sing
+    verses(99,0)
   end
 
 end
