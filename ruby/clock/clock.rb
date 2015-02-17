@@ -5,8 +5,8 @@
 
 class Clock
 
-  def self.at(hours, minutes=00)
-    "0#{hour}:#{minutes}"
+  def self.at(hours, minutes=0)
+    hours.to_f
   end
 
 end
